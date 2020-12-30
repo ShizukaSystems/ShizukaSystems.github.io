@@ -1,0 +1,381 @@
+
+<!-- <!DOCTYPE html> -->
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>ShizukaMessage - iOS messenger with video messages, encryption, local storage.</title>
+        <meta name="description" content="ShizukaMessage is a messanger whose goal is to allow users to communication is carried out by sending text and video messages."/>
+		<meta name="keywords" content="ShizukaMessage, messanger, custom development, mobile application development, iOS, communication, messages, video messages, RSA, websocket, REST">
+
+		
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143760997-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143760997-3');
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+ym(53171368, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/53171368" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<!-- Info -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="/img/ShizukaSystems logo.ico" type="image/x-icon">
+<meta name="msapplication-TileImage" content="/img/ShizukaSystems signboard.png">
+<meta name="application-name" content="ShizukaSystems">
+<link rel="canonical" href="https://shizukasystems.com/portfolio/mobile/iOS/shizukamessage/"/>
+<!-- OG -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ShizukaSystems">
+<meta property="og:title" content="ShizukaMessage - iOS messenger with video messages, encryption, local storage.">
+<meta property="og:description" content="ShizukaMessage is a messanger whose goal is to allow users to communication is carried out by sending text and video messages.">
+<meta property="og:url" content="http://shizukasystems.com/portfolio/mobile/iOS/shizukamessage/">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://shizukasystems.com/img/ShizukaSystems signboard.png">
+<meta property="og:image:width" content="968">
+<meta property="og:image:height" content="504">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ShizukaMessage - iOS messenger with video messages, encryption, local storage.">
+<meta name="twitter:description" content="ShizukaMessage is a messanger whose goal is to allow users to communication is carried out by sending text and video messages.">
+<meta name="twitter:image:src" content="http://shizukasystems.com/img/ShizukaSystems signboard.png">
+<meta name="twitter:url" content="http://shizukasystems.com/portfolio/mobile/iOS/shizukamessage/">
+<meta name="twitter:domain" content="shizukasystems.com">
+<meta name="twitter:site" content="@M3ikShizuka">
+<meta name="twitter:creator" content="@M3ikShizuka">
+
+<meta itemprop="name" content="ShizukaSystems"> 
+<meta itemprop="description" content="ShizukaMessage is a messanger whose goal is to allow users to communication is carried out by sending text and video messages."> 
+<meta itemprop="image" content="http://shizukasystems.com/img/ShizukaSystems signboard.png">
+<!-- CSS -->
+<link rel="stylesheet" href="/css/common/main.css"/>
+<link rel="stylesheet" href="/css/common/header.css"/>
+<link rel="stylesheet" href="/css/common/footer.css"/>
+		<link rel="stylesheet" href="/css/common/animate.css"/>
+
+<script defer src="/js/jquery-3.3.1.js"></script>
+<script defer
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"
+></script>
+
+  <!-- CDN -->
+<script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+
+<script defer src="/js/common/vanilla-tilt.js"></script>
+<script defer src="/js/common/wow.min.js"></script>
+
+<!-- App -->
+<script defer src="/js/common/message_box.js"></script>
+<script defer src="/js/common/input_slideholder.js"></script>
+<script defer src="/js/coldDeath.js"></script>
+<script defer src="/js/ganbare.js"></script>
+		<link rel="stylesheet" href="/css/common/section_title.css"/>
+		<link rel="stylesheet" href="/css/common/section_subtitle.css"/>
+		<link rel="stylesheet" href="/css/common/page_boxes.css"/>
+		<link rel="stylesheet" href="/css/portfolio/section_brief.css"/>
+	</head>
+
+	<body class="scrollbar">
+		
+<head>
+    <script defer src="/js/menu.js"></script>
+</head>
+<header>
+    <div class="header_wrapper">
+        <div class="header_content">
+            <div class="header_menu_button">
+                <div></div>
+            </div>
+            <nav class="header_buttons_content">
+                <ul>
+                    <li>
+                        <div class="header_link">
+                            <a href=/home/ alt="HOME">
+                                HOME
+                                <div class="link_down_border"></div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header_link">
+                            <a href=/home/#dev_section alt="DEVELOPMENT">
+                                DEVELOPMENT
+                                <div class="link_down_border"></div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header_link">
+                            <a href=/home/#portfolio_section alt="PORTFOLIO">
+                                PORTFOLIO
+                                <div class="link_down_border"></div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="header_link">
+                            <a href=/home/#contact_section alt="CONTACT">CONTACT
+                                <div class="link_down_border"></div>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="header_menu">
+        <div class="header_menu_content">
+            <nav class="header_menu_buttons_content">
+                <div class="header_table">
+                    <a class="header_menu_button_page" href=/home/ alt="HOME">
+                        HOME
+                    </a>
+                </div>
+                <div class="header_table">
+                    <a class="header_menu_button_page" href=/home/#dev_section alt="DEVELOPMENT">
+                        DEVELOPMENT
+                    </a>
+                </div>
+                <div class="header_table">
+                    <a class="header_menu_button_page" href=/home/#portfolio_section alt="PORTFOLIO">
+                        PORTFOLIO
+                    </a>
+                </div>
+                <div class="header_table">
+                    <a class="header_menu_button_page" href=/home/#contact_section alt="CONTACT">
+                        CONTACT
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>		<main>
+			<div id="coldDeath"></div>
+			<section class="section_title" id="coldDeathCheckSize">
+				<div class="wrapper">
+					<div class="content">
+						<p>ShizukaSystems</p>
+						<h1>ShizukaMessage - mobile messenger for iOS with video messages and encryption</h1>
+					</div>
+				</div>
+			</section>
+			<section class="section_subtitle">
+				<div class="wrapper">
+					<div class="middle_block">
+						<h2>Brief description of the developed system</h2>
+						<hr/>
+					</div>
+				</div>
+			</section>
+			<section class="section_brief">
+				<div class="wrapper">
+					<div class="header_block">
+						<div class="header_block_underline">
+							<div class="header_block_underline_left"></div>
+							<div class="header_block_underline_right"></div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="about_product">
+						<p>ShizukaMessage is a startup project whose goal is to allow users to quickly and safely communicate using a mobile messenger. Communication is carried out by sending text and video messages. Mobile messenger instantly receives and sends new messages via the WebSocket protocol. Transmitted test messages are encrypted using the RSA encryption algorithm. If there is no connection with the messenger server, access to previously obtained data is carried out using local storage on the device.</p>
+						<table>
+							<tbody>
+								<tr style="display: none;">
+									<th>Author and developer:</th>
+									<td>
+										<a href="https://m3ikshizuka.github.io/" target="_blank">Medvedev Mikhail Dmitrievich</a>
+									</td>
+								</tr>
+								<tr>
+									<th>Generalized functional requirements:</th>
+									<td>
+										<div class="cell_content">
+											<ul>
+												<li> Authorization</li>
+												<li>Registration</li>
+												<li>Password recovery</li>
+												<li>Contact management</li>
+												<li>Managing chats</li>
+												<li>Text messaging</li>
+												<li>Video communication</li>
+												<li>Account Management</li>
+												<li>Local data storage</li>
+												<li>Data Encryption</li>
+											</ul>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>Technology stack on client:</th>
+									<td>
+										<div class="cell_content">
+											<ul>
+												<li>Swift</li>
+												<li>Storyboard</li>
+												<li>REST API</li>
+												<li>JWT</li>
+												<li>RSA</li>
+												<li>WebSocket</li>
+												<li>Core Data</li>
+												<li>Keychain</li>
+												<li>ImagePicker</li>
+											</ul>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>Technology stack on server:</th>
+									<td>
+										<div class="cell_content">
+											<ul>
+												<li>PHP</li>
+												<li>Python</li>
+												<li>REST API</li>
+												<li>JWT</li>
+												<li>RSA</li>
+												<li>WebSocket</li>
+												<li>MySQL</li>
+											</ul>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+			<!--  -->
+			<section class="section_subtitle">
+				<div class="wrapper">
+					<div class="middle_block">
+						<h2>All application pages layouts</h2>
+						<hr/>
+					</div>
+				</div>
+			</section>
+			<!--  -->
+			<section>
+				<div class="wrapper">
+					<div class="header_block">
+						<div class="header_block_underline">
+							<div class="header_block_underline_left"></div>
+							<div class="header_block_underline_right"></div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="page_boxes">
+						<div class="page_box"><img style="background-color: #363636;" src="https://m3ikshizuka.github.io/assets/img/projects/shizukamessage/ipa all views.png"></div>
+					</div>
+				</div>
+			</section>
+			<!--  -->
+			<section class="section_subtitle">
+				<div class="wrapper">
+					<div class="middle_block">
+						<h2>Application pages screenshots</h2>
+						<hr/>
+					</div>
+				</div>
+			</section>
+			<!--  -->
+			<section>
+				<div class="wrapper">
+					<!-- <div class="page_boxes">
+						<div class="page_box_h">
+							<img class="lazy" data-src="https://m3ikshizuka.github.io/assets/img/projects/shizukamessage/shizukamessage launch screen.svg"/>
+						</div>
+						<div class="page_box_h">
+							<img class="lazy" data-src="https://m3ikshizuka.github.io/assets/img/projects/shizukamessage/shizukamessage sign in.svg"/>
+						</div>
+						<div class="page_box_h">
+							<img class="lazy" data-src="https://m3ikshizuka.github.io/assets/img/projects/shizukamessage/shizukamessage sign up.svg"/>
+						</div>
+						<div class="page_box_h">
+							<img class="lazy" data-src="https://m3ikshizuka.github.io/assets/img/projects/shizukamessage/shizukamessage restore password.svg"/>
+						</div>
+						<div class="page_box_h">
+							<img class="lazy" data-src="https://m3ikshizuka.github.io/assets/img/projects/shizukamessage/shizukamessage contacts.svg"/>
+						</div>
+						<div class="page_box_h">
+							<img class="lazy" data-src="https://m3ikshizuka.github.io/assets/img/projects/shizukamessage/shizukamessage contact.svg"/>
+						</div>
+						<div class="page_box_h">
+							<img class="lazy" data-src="https://m3ikshizuka.github.io/assets/img/projects/shizukamessage/shizukamessage chats.svg"/>
+						</div>
+						<div class="page_box_h">
+							<img class="lazy" data-src="https://m3ikshizuka.github.io/assets/img/projects/shizukamessage/shizukamessage chat.svg"/>
+						</div>
+						<div class="page_box_h">
+							<img class="lazy" data-src="https://m3ikshizuka.github.io/assets/img/projects/shizukamessage/shizukamessage settings.svg"/>
+						</div>
+						<div class="page_box_h">
+							<img class="lazy" data-src="https://m3ikshizuka.github.io/assets/img/projects/shizukamessage/shizukamessage settings info.svg"/>
+						</div>
+					</div> -->
+					<div class="page_boxes">
+            <div class="page_box_h">
+              <object type="image/svg+xml" data="https://m3ikshizuka.github.io/assets/img/projects/shizukamessage/shizukamessage launch screen.svg"></object>
+            </div>
+            <div class="page_box_h">
+              <object type="image/svg+xml" data="https://m3ikshizuka.github.io/assets/img/projects/shizukamessage/shizukamessage sign in.svg"></object>
+            </div>
+            <div class="page_box_h">
+              <object type="image/svg+xml" data="https://m3ikshizuka.github.io/assets/img/projects/shizukamessage/shizukamessage sign up.svg"></object>
+            </div>
+            <div class="page_box_h">
+              <object type="image/svg+xml" data="https://m3ikshizuka.github.io/assets/img/projects/shizukamessage/shizukamessage restore password.svg"></object>
+            </div>
+            <div class="page_box_h">
+              <object type="image/svg+xml" data="https://m3ikshizuka.github.io/assets/img/projects/shizukamessage/shizukamessage contacts.svg"></object>
+            </div>
+            <div class="page_box_h">
+              <object type="image/svg+xml" data="https://m3ikshizuka.github.io/assets/img/projects/shizukamessage/shizukamessage contact.svg"></object>
+            </div>
+            <div class="page_box_h">
+              <object type="image/svg+xml" data="https://m3ikshizuka.github.io/assets/img/projects/shizukamessage/shizukamessage chats.svg"></object>
+            </div>
+            <div class="page_box_h">
+              <object type="image/svg+xml" data="https://m3ikshizuka.github.io/assets/img/projects/shizukamessage/shizukamessage chat.svg"></object>
+            </div>
+            <div class="page_box_h">
+              <object type="image/svg+xml" data="https://m3ikshizuka.github.io/assets/img/projects/shizukamessage/shizukamessage settings.svg"></object>
+            </div>
+            <div class="page_box_h">
+              <object type="image/svg+xml" data="https://m3ikshizuka.github.io/assets/img/projects/shizukamessage/shizukamessage settings info.svg"></object>
+            </div>
+          </div>
+				</div>
+			</section>
+			<!--  -->
+			<footer>
+    <div class="wrapper">
+        <div class="footer_content_blocks">
+            <div class="footer_content_block">
+                <p>© ShizukaSystems, 2020 </p>
+            </div>
+            <div class="footer_content_block">
+                <a href="/privacy/">Privacy Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>			<!-- App -->
+					</main>
+	</body>
+</html>
